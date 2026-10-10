@@ -1,0 +1,68 @@
+#expense tracker project 
+
+expense = []# list of expenses in from of dictionary 
+print ("Welcome to Expense Tracker: khrcha kam kiya karo")
+
+while True:
+    print ("1. add expense")
+    print ("2. view all expenses")
+    print ("3. view total khrcha")
+    print ("4. exit")
+
+    choice = input(" please enter your choice:")
+
+    #1 add expense
+    
+    if (choice ==1):
+
+      data =input (" kis date par khrcha kiya tha?")
+      category = input (" kis type ka khrcha kiya(food, travel, makeup, books)")
+      description = input ("aur detail dedo")
+      amount = float (input ("enter the amount :"))
+
+      expense = {
+                "date": data,
+                "category": category,
+
+                "description": description, 
+                "amount": amount }
+
+
+
+
+    expense.append(expense)
+    print ("\n done bro.expense is added successfully")
+
+#2 view all expenses
+
+    if (choice ==2):
+      if (len(expense)==0 ):
+        
+         print ("no expense added. jao pehle khrcha karo")
+    else:
+     print ("===== ye y apka sara expense =====") 
+
+    count =1
+
+for eachkhrcha in expense:
+     print(f"khrcha number { count } -> {eachkhrcha["date"]}, {eachkhrcha["category"]}, {eachkhrcha["description"]}, {eachkhrcha["amount"]}")
+     count +=1
+
+
+#3 view total khrcha 
+
+if (choice ==3):
+   total =0 
+   for eachkhrcha in expense:
+      total = total + eachkhrcha["amount"]
+      print("\n total khrcha =", total) 
+
+#4exit 
+
+elif (choice ==4):
+   print ("dhanyavad appne humara system kiya")
+
+
+else:
+   print ("invalid choice. try again ")
+
